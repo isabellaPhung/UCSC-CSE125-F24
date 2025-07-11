@@ -1,0 +1,17 @@
+{
+    "top": "counter",
+    "files":
+    ["part3/counter/counter.sv",
+     "part2/mux2/mux2.sv",
+     "part3/counter/mux.sv",
+     "part2/adder/adder.sv",
+     "part2/full_add/full_add.sv",
+     "part2/half_add/half_add.sv",
+     "part2/xor2/xor2.sv",
+     "provided/and2.sv",
+     "provided/or2.sv",
+     "provided/inv.sv",
+     "provided/dff.sv",
+     "provided/hex2ssd.sv"
+    ]
+}

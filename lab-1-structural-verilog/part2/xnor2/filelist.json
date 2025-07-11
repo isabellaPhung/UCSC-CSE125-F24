@@ -1,0 +1,9 @@
+{
+    "top": "xnor2",
+    "files":
+    ["part2/xnor2/xnor2.sv",
+     "provided/and2.sv",
+     "provided/or2.sv",
+     "provided/inv.sv"
+    ]
+}

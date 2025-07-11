@@ -1,0 +1,9 @@
+{
+    "top": "testbench",
+    "files":
+    ["part3/axil_ram/axil_ram2/axil_ram.sv"
+    ,"part3/axil_ram/testbench.sv"
+    ,"provided/nonsynth_clock_gen.sv"
+    ,"provided/nonsynth_reset_gen.sv"
+    ]
+}

@@ -1,0 +1,7 @@
+ {
+    "top": "rgb2gray",
+    "files":
+     ["part4/rgb2gray/rgb2gray.sv"
+     ,"imports/elastic.sv"
+    ]
+}

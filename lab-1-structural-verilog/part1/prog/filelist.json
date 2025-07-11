@@ -1,0 +1,8 @@
+{
+    "top": "lfsr",
+    "files":
+    ["part1/prog/lfsr.v",
+     "provided/inv.sv",
+     "provided/dff.sv"
+    ]
+}

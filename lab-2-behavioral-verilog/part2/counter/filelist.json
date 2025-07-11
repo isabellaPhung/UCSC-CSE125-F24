@@ -1,0 +1,14 @@
+{
+    "top": "counter",
+    "files":
+    ["part2/counter/counter.sv",
+     "part2/debounce/debounce.sv",
+     "part1/hex2ssd/hex2ssd.sv",
+     "part1/mux2/mux2.sv",
+     "part1/mux2/mux.sv",
+     "provided/dff.sv",
+     "provided/inv.sv",
+     "part2/detect_edge/detect_edge.sv",
+     "part2/shift/shift.sv"
+    ]
+}

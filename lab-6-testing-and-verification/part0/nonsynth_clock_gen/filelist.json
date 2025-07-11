@@ -1,0 +1,7 @@
+{
+    "top": "testbench",
+    "files":
+    ["part0/nonsynth_clock_gen/nonsynth_clock_gen.sv"
+    ,"part0/nonsynth_clock_gen/testbench.sv"
+    ]
+}

@@ -1,0 +1,9 @@
+ {
+    "top": "fifo_1r1w",
+    "files":
+     ["part3/fifo_1r1w/fifo_1r1w.sv"
+     ,"imports/ram_1w1r_sync.sv"
+     ,"imports/MealyCounter.sv"
+     ,"imports/elastic.sv"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "top": "lfsr",
+    "_comment": "You may add other modules that you create",
+    "files":
+    ["part3/lfsr/lfsr.sv",
+     "part3/shift/shift.sv",
+     "part3/counter/counter.sv",
+     "part3/counter/mux.sv",
+     "part2/mux2/mux2.sv",
+     "part2/full_add/full_add.sv",
+     "part2/half_add/half_add.sv",
+     "part2/adder/adder.sv",
+     "provided/hex2ssd.sv",
+     "part2/xor2/xor2.sv",
+     "provided/and2.sv",
+     "provided/or2.sv",
+     "provided/inv.sv",
+     "provided/dff.sv"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "top": "shift",
+    "files":
+    ["part1/shift/shift.sv"
+    ,"provided/ICESTORM_LC.v"
+    ]
+}

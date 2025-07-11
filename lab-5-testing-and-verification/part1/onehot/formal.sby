@@ -1,0 +1,14 @@
+[options]
+mode bmc
+depth 10
+expect pass
+
+[engines]
+smtbmc yices
+
+[script]
+read_verilog -formal onehot.sv
+prep -top onehot
+
+[files]
+onehot.sv

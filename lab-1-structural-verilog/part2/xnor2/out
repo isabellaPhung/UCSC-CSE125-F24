@@ -1,0 +1,457 @@
+REPO_ROOT=/workspaces/lab-1-structural-verilog-isabellaPhung SIM=icarus pytest -rA
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0
+rootdir: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2
+plugins: utils-0.0.0, timeout-2.3.1, cocotb-test-0.2.5
+collected 8 items
+
+test_xnor2.py ......ss                                                   [100%]
+
+==================================== PASSES ====================================
+____________________ test_each_runner[test_name=init_test] _____________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: iverilog -o /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/init_test/icarus/xnor2.vvp -D COCOTB_SIM=1 -g2012 -s xnor2 -s iverilog_dump -f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/init_test/icarus/timescale.f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/init_test/icarus/iverilog_dump.v
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/init_test/icarus/xnor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802592
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.init_test
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running init_test (1/1)
+INFO     cocotb:simulator.py:305                                                           Test for Basic Connectivity
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  init_test passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.init_test           PASS           1.00           0.00        804.77  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  1.00           0.12          8.46  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xnor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/init_test/icarus/_y59xwo8_results.xml
+________________ test_each_runner[test_name=two_input_test_001] ________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: iverilog -o /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_001/icarus/xnor2.vvp -D COCOTB_SIM=1 -g2012 -s xnor2 -s iverilog_dump -f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_001/icarus/timescale.f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_001/icarus/iverilog_dump.v
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_001/icarus/xnor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802593
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_001
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_001 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_001 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_001   PASS           1.00           0.00        761.84  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1.00           0.12          8.60  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xnor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_001/icarus/8dnksd10_results.xml
+________________ test_each_runner[test_name=two_input_test_002] ________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: iverilog -o /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_002/icarus/xnor2.vvp -D COCOTB_SIM=1 -g2012 -s xnor2 -s iverilog_dump -f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_002/icarus/timescale.f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_002/icarus/iverilog_dump.v
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_002/icarus/xnor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802593
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_002
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_002 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_002 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_002   PASS           1.00           0.00        738.00  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1.00           0.12          8.39  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xnor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_002/icarus/w39ap1l2_results.xml
+________________ test_each_runner[test_name=two_input_test_003] ________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: iverilog -o /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_003/icarus/xnor2.vvp -D COCOTB_SIM=1 -g2012 -s xnor2 -s iverilog_dump -f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_003/icarus/timescale.f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_003/icarus/iverilog_dump.v
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_003/icarus/xnor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802593
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_003
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_003 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_003 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_003   PASS           1.00           0.00        754.85  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1.00           0.12          8.55  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xnor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_003/icarus/5336l8sy_results.xml
+________________ test_each_runner[test_name=two_input_test_004] ________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: iverilog -o /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_004/icarus/xnor2.vvp -D COCOTB_SIM=1 -g2012 -s xnor2 -s iverilog_dump -f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_004/icarus/timescale.f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_004/icarus/iverilog_dump.v
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_004/icarus/xnor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802594
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_004
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_004 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_004 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_004   PASS           1.00           0.00        670.58  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1.00           0.12          8.38  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xnor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/two_input_test_004/icarus/17l4f33k_results.xml
+_______________________________ test_all_runner ________________________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: iverilog -o /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/all/icarus/xnor2.vvp -D COCOTB_SIM=1 -g2012 -s xnor2 -s iverilog_dump -f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/all/icarus/timescale.f /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/all/icarus/iverilog_dump.v
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/all/icarus/xnor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802594
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.init_test
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_001
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_002
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_003
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_004
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running init_test (1/5)
+INFO     cocotb:simulator.py:305                                                           Test for Basic Connectivity
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  init_test passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  running two_input_test_001 (2/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      2.00ns INFO     cocotb.regression                  two_input_test_001 passed
+INFO     cocotb:simulator.py:305      2.00ns INFO     cocotb.regression                  running two_input_test_002 (3/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      3.00ns INFO     cocotb.regression                  two_input_test_002 passed
+INFO     cocotb:simulator.py:305      3.00ns INFO     cocotb.regression                  running two_input_test_003 (4/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      4.00ns INFO     cocotb.regression                  two_input_test_003 passed
+INFO     cocotb:simulator.py:305      4.00ns INFO     cocotb.regression                  running two_input_test_004 (5/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      5.00ns INFO     cocotb.regression                  two_input_test_004 passed
+INFO     cocotb:simulator.py:305      5.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.init_test            PASS           1.00           0.00        829.41  **
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_001   PASS           1.00           0.00       4842.56  **
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_002   PASS           1.00           0.00       4654.65  **
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_003   PASS           1.00           0.00       4865.00  **
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_004   PASS           1.00           0.00       4396.33  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=5 PASS=5 FAIL=0 SKIP=0                   5.00           0.12         41.75  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xnor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/run/all/icarus/78_i2dhq_results.xml
+=========================== short test summary info ============================
+PASSED test_xnor2.py::test_each_runner[test_name=init_test]
+PASSED test_xnor2.py::test_each_runner[test_name=two_input_test_001]
+PASSED test_xnor2.py::test_each_runner[test_name=two_input_test_002]
+PASSED test_xnor2.py::test_each_runner[test_name=two_input_test_003]
+PASSED test_xnor2.py::test_each_runner[test_name=two_input_test_004]
+PASSED test_xnor2.py::test_all_runner
+SKIPPED [1] test_xnor2.py:109: Requires Verilator
+SKIPPED [1] test_xnor2.py:116: Requires Verilator
+========================= 6 passed, 2 skipped in 1.91s =========================
+mv results.json icarus.json
+REPO_ROOT=/workspaces/lab-1-structural-verilog-isabellaPhung SIM=verilator pytest -rA
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0
+rootdir: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2
+plugins: utils-0.0.0, timeout-2.3.1, cocotb-test-0.2.5
+collected 8 items
+
+test_xnor2.py ........                                                   [100%]
+
+==================================== PASSES ====================================
+____________________ test_each_runner[test_name=init_test] _____________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: perl /usr/local/bin/verilator -cc --exe -Mdir /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -DCOCOTB_SIM=1 --top-module xnor2 --vpi --public-flat-rw --prefix Vtop -o xnor2 -LDFLAGS -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator -Wno-fatal --trace-fst --trace-structs --timescale 1ps/1ps /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv
+INFO     cocotb:simulator.py:334 Running command: make -C /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -f Vtop.mk
+INFO     cocotb:simulator.py:305 make[1]: Entering directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:305 ccache g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -Os -c -o verilator.o /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp
+INFO     cocotb:simulator.py:305 ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+INFO     cocotb:simulator.py:305 ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated_dpi.o /usr/local/share/verilator/include/verilated_dpi.cpp
+INFO     cocotb:simulator.py:305 ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated_vpi.o /usr/local/share/verilator/include/verilated_vpi.cpp
+INFO     cocotb:simulator.py:305 ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated_fst_c.o /usr/local/share/verilator/include/verilated_fst_c.cpp
+INFO     cocotb:simulator.py:305 ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+INFO     cocotb:simulator.py:305 /usr/bin/python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__DepSet_h84412442__0.cpp Vtop___024root__DepSet_heccd7ead__0.cpp Vtop__Dpi.cpp Vtop__Trace__0.cpp Vtop___024root__Slow.cpp Vtop___024root__DepSet_h84412442__0__Slow.cpp Vtop___024root__DepSet_heccd7ead__0__Slow.cpp Vtop__Syms.cpp Vtop__Trace__0__Slow.cpp Vtop__TraceDecls__0__Slow.cpp > Vtop__ALL.cpp
+INFO     cocotb:simulator.py:305 ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o Vtop__ALL.o Vtop__ALL.cpp
+INFO     cocotb:simulator.py:305 echo "" > Vtop__ALL.verilator_deplist.tmp
+INFO     cocotb:simulator.py:305 Archive ar -rcs Vtop__ALL.a Vtop__ALL.o
+INFO     cocotb:simulator.py:305 g++     verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_fst_c.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator -lz  -pthread -lpthread -latomic   -o xnor2
+INFO     cocotb:simulator.py:305 rm Vtop__ALL.verilator_deplist.tmp
+INFO     cocotb:simulator.py:305 make[1]: Leaving directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:334 Running command: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/xnor2
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Verilator version 5.020 2024-01-01
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802596
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.init_test
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running init_test (1/1)
+INFO     cocotb:simulator.py:305                                                           Test for Basic Connectivity
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  init_test passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.init_test           PASS           1.00           0.00       2130.14  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  1.00           0.12          8.15  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 - :0: Verilog $finish
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/ivmx2i4p_results.xml
+________________ test_each_runner[test_name=two_input_test_001] ________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: perl /usr/local/bin/verilator -cc --exe -Mdir /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -DCOCOTB_SIM=1 --top-module xnor2 --vpi --public-flat-rw --prefix Vtop -o xnor2 -LDFLAGS -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator -Wno-fatal --trace-fst --trace-structs --timescale 1ps/1ps /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv
+INFO     cocotb:simulator.py:334 Running command: make -C /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -f Vtop.mk
+INFO     cocotb:simulator.py:305 make[1]: Entering directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:305 make[1]: Nothing to be done for 'default'.
+INFO     cocotb:simulator.py:305 make[1]: Leaving directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:334 Running command: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/xnor2
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Verilator version 5.020 2024-01-01
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802596
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_001
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_001 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_001 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_001   PASS           1.00           0.00       2157.50  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1.00           0.12          8.22  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 - :0: Verilog $finish
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/q1f6zkfl_results.xml
+________________ test_each_runner[test_name=two_input_test_002] ________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: perl /usr/local/bin/verilator -cc --exe -Mdir /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -DCOCOTB_SIM=1 --top-module xnor2 --vpi --public-flat-rw --prefix Vtop -o xnor2 -LDFLAGS -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator -Wno-fatal --trace-fst --trace-structs --timescale 1ps/1ps /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv
+INFO     cocotb:simulator.py:334 Running command: make -C /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -f Vtop.mk
+INFO     cocotb:simulator.py:305 make[1]: Entering directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:305 make[1]: Nothing to be done for 'default'.
+INFO     cocotb:simulator.py:305 make[1]: Leaving directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:334 Running command: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/xnor2
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Verilator version 5.020 2024-01-01
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802596
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_002
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_002 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_002 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_002   PASS           1.00           0.00       1748.65  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1.00           0.12          8.28  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 - :0: Verilog $finish
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/ofd6_xnw_results.xml
+________________ test_each_runner[test_name=two_input_test_003] ________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: perl /usr/local/bin/verilator -cc --exe -Mdir /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -DCOCOTB_SIM=1 --top-module xnor2 --vpi --public-flat-rw --prefix Vtop -o xnor2 -LDFLAGS -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator -Wno-fatal --trace-fst --trace-structs --timescale 1ps/1ps /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv
+INFO     cocotb:simulator.py:334 Running command: make -C /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -f Vtop.mk
+INFO     cocotb:simulator.py:305 make[1]: Entering directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:305 make[1]: Nothing to be done for 'default'.
+INFO     cocotb:simulator.py:305 make[1]: Leaving directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:334 Running command: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/xnor2
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Verilator version 5.020 2024-01-01
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802597
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_003
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_003 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_003 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_003   PASS           1.00           0.00       1817.53  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1.00           0.12          8.69  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 - :0: Verilog $finish
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/cuj3ay8m_results.xml
+________________ test_each_runner[test_name=two_input_test_004] ________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: perl /usr/local/bin/verilator -cc --exe -Mdir /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -DCOCOTB_SIM=1 --top-module xnor2 --vpi --public-flat-rw --prefix Vtop -o xnor2 -LDFLAGS -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator -Wno-fatal --trace-fst --trace-structs --timescale 1ps/1ps /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv
+INFO     cocotb:simulator.py:334 Running command: make -C /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -f Vtop.mk
+INFO     cocotb:simulator.py:305 make[1]: Entering directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:305 make[1]: Nothing to be done for 'default'.
+INFO     cocotb:simulator.py:305 make[1]: Leaving directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:334 Running command: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/xnor2
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Verilator version 5.020 2024-01-01
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802597
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_004
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_004 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_004 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_004   PASS           1.00           0.00       1823.06  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1.00           0.12          8.70  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 - :0: Verilog $finish
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/q8vukano_results.xml
+_______________________________ test_all_runner ________________________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: perl /usr/local/bin/verilator -cc --exe -Mdir /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -DCOCOTB_SIM=1 --top-module xnor2 --vpi --public-flat-rw --prefix Vtop -o xnor2 -LDFLAGS -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator -Wno-fatal --trace-fst --trace-structs --timescale 1ps/1ps /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv
+INFO     cocotb:simulator.py:334 Running command: make -C /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build -f Vtop.mk
+INFO     cocotb:simulator.py:305 make[1]: Entering directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:305 make[1]: Nothing to be done for 'default'.
+INFO     cocotb:simulator.py:305 make[1]: Leaving directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build'
+INFO     cocotb:simulator.py:334 Running command: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/xnor2
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Verilator version 5.020 2024-01-01
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727802598
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.init_test
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_001
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_002
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_003
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xnor2.two_input_test_004
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running init_test (1/5)
+INFO     cocotb:simulator.py:305                                                           Test for Basic Connectivity
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  init_test passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  running two_input_test_001 (2/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      2.00ns INFO     cocotb.regression                  two_input_test_001 passed
+INFO     cocotb:simulator.py:305      2.00ns INFO     cocotb.regression                  running two_input_test_002 (3/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      3.00ns INFO     cocotb.regression                  two_input_test_002 passed
+INFO     cocotb:simulator.py:305      3.00ns INFO     cocotb.regression                  running two_input_test_003 (4/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      4.00ns INFO     cocotb.regression                  two_input_test_003 passed
+INFO     cocotb:simulator.py:305      4.00ns INFO     cocotb.regression                  running two_input_test_004 (5/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      5.00ns INFO     cocotb.regression                  two_input_test_004 passed
+INFO     cocotb:simulator.py:305      5.00ns INFO     cocotb.regression                  ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.init_test            PASS           1.00           0.00       2229.69  **
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_001   PASS           1.00           0.00       4424.13  **
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_002   PASS           1.00           0.00       5459.69  **
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_003   PASS           1.00           0.00       5095.26  **
+INFO     cocotb:simulator.py:305                                                         ** test_xnor2.two_input_test_004   PASS           1.00           0.00       5767.17  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=5 PASS=5 FAIL=0 SKIP=0                   5.00           0.12         41.88  **
+INFO     cocotb:simulator.py:305                                                         ***************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 - :0: Verilog $finish
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/build/vtewvdbe_results.xml
+__________________________________ test_lint ___________________________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: perl /usr/local/bin/verilator -cc --exe -Mdir /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint -DCOCOTB_SIM=1 --top-module xnor2 --vpi --public-flat-rw --prefix Vtop -o xnor2 -LDFLAGS -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator --lint-only --timescale 1ps/1ps /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv
+INFO     cocotb:simulator.py:334 Running command: make -C /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint -f Vtop.mk -n
+INFO     cocotb:simulator.py:305 make[1]: Entering directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint'
+INFO     cocotb:simulator.py:305 make[1]: Nothing to be done for 'all'.
+INFO     cocotb:simulator.py:305 make[1]: Leaving directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint'
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint/8bnafeby_results.xml
+__________________________________ test_style __________________________________
+------------------------------ Captured log call -------------------------------
+INFO     cocotb:simulator.py:334 Running command: perl /usr/local/bin/verilator -cc --exe -Mdir /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint -DCOCOTB_SIM=1 --top-module xnor2 --vpi --public-flat-rw --prefix Vtop -o xnor2 -LDFLAGS -Wl,-rpath,/usr/local/lib/python3.10/dist-packages/cocotb/libs -L/usr/local/lib/python3.10/dist-packages/cocotb/libs -lcocotbvpi_verilator --lint-only -Wwarn-style -Wno-lint --timescale 1ps/1ps /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/xnor2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/and2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/or2.sv /workspaces/lab-1-structural-verilog-isabellaPhung/provided/inv.sv
+INFO     cocotb:simulator.py:334 Running command: make -C /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint -f Vtop.mk -n
+INFO     cocotb:simulator.py:305 make[1]: Entering directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint'
+INFO     cocotb:simulator.py:305 make[1]: Nothing to be done for 'all'.
+INFO     cocotb:simulator.py:305 make[1]: Leaving directory '/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint'
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xnor2/lint/j9vokwcn_results.xml
+=========================== short test summary info ============================
+PASSED test_xnor2.py::test_each_runner[test_name=init_test]
+PASSED test_xnor2.py::test_each_runner[test_name=two_input_test_001]
+PASSED test_xnor2.py::test_each_runner[test_name=two_input_test_002]
+PASSED test_xnor2.py::test_each_runner[test_name=two_input_test_003]
+PASSED test_xnor2.py::test_each_runner[test_name=two_input_test_004]
+PASSED test_xnor2.py::test_all_runner
+PASSED test_xnor2.py::test_lint
+PASSED test_xnor2.py::test_style
+============================== 8 passed in 3.51s ===============================
+mv results.json verilator.json

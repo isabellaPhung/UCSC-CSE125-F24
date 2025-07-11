@@ -1,0 +1,7 @@
+{
+    "top": "testbench",
+    "files":
+    ["part2/rgb2gray/rgb2gray1/rgb2gray.sv"
+    ,"part2/rgb2gray/testbench.sv"
+    ]
+}

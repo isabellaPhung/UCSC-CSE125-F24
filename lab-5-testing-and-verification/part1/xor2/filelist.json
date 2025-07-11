@@ -1,0 +1,7 @@
+{
+    "top": "testbench",
+    "files":
+    ["part1/xor2/xor2.sv"
+    ,"part1/xor2/testbench.sv"
+    ]
+}

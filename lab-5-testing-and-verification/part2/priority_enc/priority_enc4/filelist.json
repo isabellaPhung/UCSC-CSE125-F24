@@ -1,0 +1,7 @@
+{
+    "top": "testbench",
+    "files":
+    ["part2/priority_enc/priority_enc4/priority_enc.sv"
+    ,"part2/priority_enc/testbench.sv"
+    ]
+}

@@ -1,0 +1,14 @@
+[options]
+mode bmc
+depth 10
+expect pass
+
+[engines]
+smtbmc yices
+
+[script]
+read_verilog -formal half_add.sv
+prep -top half_add
+
+[files]
+half_add.sv

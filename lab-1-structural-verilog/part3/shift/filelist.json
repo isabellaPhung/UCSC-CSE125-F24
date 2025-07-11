@@ -1,0 +1,10 @@
+{
+    "top": "shift",
+    "files":
+    ["part3/shift/shift.sv",
+     "provided/and2.sv",
+     "provided/or2.sv",
+     "provided/inv.sv",
+     "provided/dff.sv"
+    ]
+}

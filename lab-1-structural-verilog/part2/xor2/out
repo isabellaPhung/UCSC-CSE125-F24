@@ -1,0 +1,399 @@
+REPO_ROOT=/workspaces/lab-1-structural-verilog-isabellaPhung SIM=icarus pytest -rA
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0
+rootdir: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2
+plugins: utils-0.0.0, timeout-2.3.1, cocotb-test-0.2.5
+collected 8 items
+
+test_xor2.py ..FF.Fss                                                    [100%]
+
+=================================== FAILURES ===================================
+________________ test_each_runner[test_name=two_input_test_002] ________________
+
+test_name = 'two_input_test_002'
+
+    @pytest.mark.parametrize("test_name", tests)
+    @max_score(0)
+    def test_each_runner(test_name):
+        # This line must be first
+        parameters = dict(locals())
+        del parameters['test_name']
+>       _runner(test_name, parameters)
+
+test_xor2.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 'two_input_test_002', ps = {}, ds = []
+
+    def _runner(n, ps, ds=[]):
+        """Run the simulator on test n, with parameters ps, and defines
+        ds. If n is none, it will run all tests"""
+    
+        simulator = os.getenv('SIM').lower()
+    
+        if(n is None):
+            name = "all"
+        else:
+            name = n
+    
+        work_dir = os.path.join(_DIR_PATH, "run", name, get_param_string(ps), simulator)
+        sim_build = os.path.join(_DIR_PATH, "build", get_param_string(ps))
+    
+        sources = get_sources(_REPO_ROOT, _DIR_PATH)
+        top = get_top(_DIR_PATH)
+    
+        # Icarus doesn't build, it just runs.
+        if simulator.startswith("icarus"):
+            sim_build = work_dir
+    
+        if simulator.startswith("verilator"):
+            compile_args=["-Wno-fatal"]
+            if(not os.path.exists(work_dir)):
+                os.makedirs(work_dir)
+        else:
+            compile_args=[]
+    
+>       run(verilog_sources=sources, toplevel=top, module=_MODULE, compile_args=compile_args, sim_build=sim_build, timescale=timescale,
+            parameters=ps, defines=ds, work_dir=work_dir, waves=True, testcase=n)
+E       SystemExit: FAILED 1 tests.
+
+test_xor2.py:66: SystemExit
+------------------------------ Captured log call -------------------------------
+WARNING  cocotb:simulator.py:525 Skipping compilation:/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_002/icarus/xor2.vvp
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_002/icarus/xor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727801799
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.two_input_test_002
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_002 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_002 failed
+INFO     cocotb:simulator.py:305                                                         Traceback (most recent call last):
+INFO     cocotb:simulator.py:305                                                           File "/usr/local/lib/python3.10/dist-packages/cocotb/regression.py", line 732, in _my_test
+INFO     cocotb:simulator.py:305                                                             await function(dut, *args, **kwargs)
+INFO     cocotb:simulator.py:305                                                           File "/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/test_xor2.py", line 162, in two_input_test
+INFO     cocotb:simulator.py:305                                                             assert dut.c_o.value == (dut.a_i.value ^ dut.b_i.value) , f"Incorrect Result: {dut.a_i.value} ^ {dut.b_i.value} != {dut.a_i.value ^ dut.b_i.value}. Got: {dut.c_o.value} at Time {get_sim_time(units='ns')}ns."
+INFO     cocotb:simulator.py:305                                                         AssertionError: Incorrect Result: 0 ^ 1 != 1. Got: 0 at Time 1.0ns.
+INFO     cocotb:simulator.py:305                                                         assert 0 == (0 ^ 1)
+INFO     cocotb:simulator.py:305                                                          +  where 0 = ModifiableObject(xor2.c_o).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.c_o) = HierarchyObject(xor2).c_o
+INFO     cocotb:simulator.py:305                                                          +  and   0 = ModifiableObject(xor2.a_i).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.a_i) = HierarchyObject(xor2).a_i
+INFO     cocotb:simulator.py:305                                                          +  and   1 = ModifiableObject(xor2.b_i).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.b_i) = HierarchyObject(xor2).b_i
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.two_input_test_002   FAIL           1.00           0.00        687.15  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=0 FAIL=1 SKIP=0                  1.00           0.12          8.57  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xor2.fst opened for output.
+ERROR    cocotb:simulator.py:256 Failed: test_xor2::two_input_test_002
+________________ test_each_runner[test_name=two_input_test_003] ________________
+
+test_name = 'two_input_test_003'
+
+    @pytest.mark.parametrize("test_name", tests)
+    @max_score(0)
+    def test_each_runner(test_name):
+        # This line must be first
+        parameters = dict(locals())
+        del parameters['test_name']
+>       _runner(test_name, parameters)
+
+test_xor2.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 'two_input_test_003', ps = {}, ds = []
+
+    def _runner(n, ps, ds=[]):
+        """Run the simulator on test n, with parameters ps, and defines
+        ds. If n is none, it will run all tests"""
+    
+        simulator = os.getenv('SIM').lower()
+    
+        if(n is None):
+            name = "all"
+        else:
+            name = n
+    
+        work_dir = os.path.join(_DIR_PATH, "run", name, get_param_string(ps), simulator)
+        sim_build = os.path.join(_DIR_PATH, "build", get_param_string(ps))
+    
+        sources = get_sources(_REPO_ROOT, _DIR_PATH)
+        top = get_top(_DIR_PATH)
+    
+        # Icarus doesn't build, it just runs.
+        if simulator.startswith("icarus"):
+            sim_build = work_dir
+    
+        if simulator.startswith("verilator"):
+            compile_args=["-Wno-fatal"]
+            if(not os.path.exists(work_dir)):
+                os.makedirs(work_dir)
+        else:
+            compile_args=[]
+    
+>       run(verilog_sources=sources, toplevel=top, module=_MODULE, compile_args=compile_args, sim_build=sim_build, timescale=timescale,
+            parameters=ps, defines=ds, work_dir=work_dir, waves=True, testcase=n)
+E       SystemExit: FAILED 1 tests.
+
+test_xor2.py:66: SystemExit
+------------------------------ Captured log call -------------------------------
+WARNING  cocotb:simulator.py:525 Skipping compilation:/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_003/icarus/xor2.vvp
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_003/icarus/xor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727801799
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.two_input_test_003
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_003 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_003 failed
+INFO     cocotb:simulator.py:305                                                         Traceback (most recent call last):
+INFO     cocotb:simulator.py:305                                                           File "/usr/local/lib/python3.10/dist-packages/cocotb/regression.py", line 732, in _my_test
+INFO     cocotb:simulator.py:305                                                             await function(dut, *args, **kwargs)
+INFO     cocotb:simulator.py:305                                                           File "/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/test_xor2.py", line 162, in two_input_test
+INFO     cocotb:simulator.py:305                                                             assert dut.c_o.value == (dut.a_i.value ^ dut.b_i.value) , f"Incorrect Result: {dut.a_i.value} ^ {dut.b_i.value} != {dut.a_i.value ^ dut.b_i.value}. Got: {dut.c_o.value} at Time {get_sim_time(units='ns')}ns."
+INFO     cocotb:simulator.py:305                                                         AssertionError: Incorrect Result: 1 ^ 0 != 1. Got: 0 at Time 1.0ns.
+INFO     cocotb:simulator.py:305                                                         assert 0 == (1 ^ 0)
+INFO     cocotb:simulator.py:305                                                          +  where 0 = ModifiableObject(xor2.c_o).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.c_o) = HierarchyObject(xor2).c_o
+INFO     cocotb:simulator.py:305                                                          +  and   1 = ModifiableObject(xor2.a_i).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.a_i) = HierarchyObject(xor2).a_i
+INFO     cocotb:simulator.py:305                                                          +  and   0 = ModifiableObject(xor2.b_i).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.b_i) = HierarchyObject(xor2).b_i
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.two_input_test_003   FAIL           1.00           0.00        707.89  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=0 FAIL=1 SKIP=0                  1.00           0.12          8.67  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xor2.fst opened for output.
+ERROR    cocotb:simulator.py:256 Failed: test_xor2::two_input_test_003
+_______________________________ test_all_runner ________________________________
+
+    @max_score(2)
+    def test_all_runner():
+        # This line must be first
+        parameters = dict(locals())
+>       _runner(None, parameters)
+
+test_xor2.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = None, ps = {}, ds = []
+
+    def _runner(n, ps, ds=[]):
+        """Run the simulator on test n, with parameters ps, and defines
+        ds. If n is none, it will run all tests"""
+    
+        simulator = os.getenv('SIM').lower()
+    
+        if(n is None):
+            name = "all"
+        else:
+            name = n
+    
+        work_dir = os.path.join(_DIR_PATH, "run", name, get_param_string(ps), simulator)
+        sim_build = os.path.join(_DIR_PATH, "build", get_param_string(ps))
+    
+        sources = get_sources(_REPO_ROOT, _DIR_PATH)
+        top = get_top(_DIR_PATH)
+    
+        # Icarus doesn't build, it just runs.
+        if simulator.startswith("icarus"):
+            sim_build = work_dir
+    
+        if simulator.startswith("verilator"):
+            compile_args=["-Wno-fatal"]
+            if(not os.path.exists(work_dir)):
+                os.makedirs(work_dir)
+        else:
+            compile_args=[]
+    
+>       run(verilog_sources=sources, toplevel=top, module=_MODULE, compile_args=compile_args, sim_build=sim_build, timescale=timescale,
+            parameters=ps, defines=ds, work_dir=work_dir, waves=True, testcase=n)
+E       SystemExit: FAILED 2 tests.
+
+test_xor2.py:66: SystemExit
+------------------------------ Captured log call -------------------------------
+WARNING  cocotb:simulator.py:525 Skipping compilation:/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/all/icarus/xor2.vvp
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/all/icarus/xor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727801800
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.init_test
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.two_input_test_001
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.two_input_test_002
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.two_input_test_003
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.two_input_test_004
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running init_test (1/5)
+INFO     cocotb:simulator.py:305                                                           Test for Basic Connectivity
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  init_test passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  running two_input_test_001 (2/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      2.00ns INFO     cocotb.regression                  two_input_test_001 passed
+INFO     cocotb:simulator.py:305      2.00ns INFO     cocotb.regression                  running two_input_test_002 (3/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      3.00ns INFO     cocotb.regression                  two_input_test_002 failed
+INFO     cocotb:simulator.py:305                                                         Traceback (most recent call last):
+INFO     cocotb:simulator.py:305                                                           File "/usr/local/lib/python3.10/dist-packages/cocotb/regression.py", line 732, in _my_test
+INFO     cocotb:simulator.py:305                                                             await function(dut, *args, **kwargs)
+INFO     cocotb:simulator.py:305                                                           File "/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/test_xor2.py", line 162, in two_input_test
+INFO     cocotb:simulator.py:305                                                             assert dut.c_o.value == (dut.a_i.value ^ dut.b_i.value) , f"Incorrect Result: {dut.a_i.value} ^ {dut.b_i.value} != {dut.a_i.value ^ dut.b_i.value}. Got: {dut.c_o.value} at Time {get_sim_time(units='ns')}ns."
+INFO     cocotb:simulator.py:305                                                         AssertionError: Incorrect Result: 0 ^ 1 != 1. Got: 0 at Time 3.002ns.
+INFO     cocotb:simulator.py:305                                                         assert 0 == (0 ^ 1)
+INFO     cocotb:simulator.py:305                                                          +  where 0 = ModifiableObject(xor2.c_o).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.c_o) = HierarchyObject(xor2).c_o
+INFO     cocotb:simulator.py:305                                                          +  and   0 = ModifiableObject(xor2.a_i).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.a_i) = HierarchyObject(xor2).a_i
+INFO     cocotb:simulator.py:305                                                          +  and   1 = ModifiableObject(xor2.b_i).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.b_i) = HierarchyObject(xor2).b_i
+INFO     cocotb:simulator.py:305      3.00ns INFO     cocotb.regression                  running two_input_test_003 (4/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      4.00ns INFO     cocotb.regression                  two_input_test_003 failed
+INFO     cocotb:simulator.py:305                                                         Traceback (most recent call last):
+INFO     cocotb:simulator.py:305                                                           File "/usr/local/lib/python3.10/dist-packages/cocotb/regression.py", line 732, in _my_test
+INFO     cocotb:simulator.py:305                                                             await function(dut, *args, **kwargs)
+INFO     cocotb:simulator.py:305                                                           File "/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/test_xor2.py", line 162, in two_input_test
+INFO     cocotb:simulator.py:305                                                             assert dut.c_o.value == (dut.a_i.value ^ dut.b_i.value) , f"Incorrect Result: {dut.a_i.value} ^ {dut.b_i.value} != {dut.a_i.value ^ dut.b_i.value}. Got: {dut.c_o.value} at Time {get_sim_time(units='ns')}ns."
+INFO     cocotb:simulator.py:305                                                         AssertionError: Incorrect Result: 1 ^ 0 != 1. Got: 0 at Time 4.003ns.
+INFO     cocotb:simulator.py:305                                                         assert 0 == (1 ^ 0)
+INFO     cocotb:simulator.py:305                                                          +  where 0 = ModifiableObject(xor2.c_o).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.c_o) = HierarchyObject(xor2).c_o
+INFO     cocotb:simulator.py:305                                                          +  and   1 = ModifiableObject(xor2.a_i).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.a_i) = HierarchyObject(xor2).a_i
+INFO     cocotb:simulator.py:305                                                          +  and   0 = ModifiableObject(xor2.b_i).value
+INFO     cocotb:simulator.py:305                                                          +    where ModifiableObject(xor2.b_i) = HierarchyObject(xor2).b_i
+INFO     cocotb:simulator.py:305      4.00ns INFO     cocotb.regression                  running two_input_test_004 (5/5)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      5.00ns INFO     cocotb.regression                  two_input_test_004 passed
+INFO     cocotb:simulator.py:305      5.00ns INFO     cocotb.regression                  **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.init_test            PASS           1.00           0.00        767.55  **
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.two_input_test_001   PASS           1.00           0.00       4781.89  **
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.two_input_test_002   FAIL           1.00           0.00       3049.02  **
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.two_input_test_003   FAIL           1.00           0.00       3305.90  **
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.two_input_test_004   PASS           1.00           0.00       5438.47  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=5 PASS=3 FAIL=2 SKIP=0                  5.00           0.12         40.59  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xor2.fst opened for output.
+ERROR    cocotb:simulator.py:256 Failed: test_xor2::two_input_test_002
+ERROR    cocotb:simulator.py:256 Failed: test_xor2::two_input_test_003
+==================================== PASSES ====================================
+____________________ test_each_runner[test_name=init_test] _____________________
+------------------------------ Captured log call -------------------------------
+WARNING  cocotb:simulator.py:525 Skipping compilation:/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/init_test/icarus/xor2.vvp
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/init_test/icarus/xor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727801798
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.init_test
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running init_test (1/1)
+INFO     cocotb:simulator.py:305                                                           Test for Basic Connectivity
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  init_test passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.init_test            PASS           1.00           0.00        739.69  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  1.00           0.11          8.71  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/init_test/icarus/uaffa1ah_results.xml
+________________ test_each_runner[test_name=two_input_test_001] ________________
+------------------------------ Captured log call -------------------------------
+WARNING  cocotb:simulator.py:525 Skipping compilation:/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_001/icarus/xor2.vvp
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_001/icarus/xor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727801798
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.two_input_test_001
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_001 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 0
+INFO     cocotb:simulator.py:305                                                           b: 0
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_001 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.two_input_test_001   PASS           1.00           0.00        745.08  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  1.00           0.12          8.50  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_001/icarus/pl3wktf__results.xml
+________________ test_each_runner[test_name=two_input_test_004] ________________
+------------------------------ Captured log call -------------------------------
+WARNING  cocotb:simulator.py:525 Skipping compilation:/workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_004/icarus/xor2.vvp
+INFO     cocotb:simulator.py:334 Running command: vvp -M /usr/local/lib/python3.10/dist-packages/cocotb/libs -m libcocotbvpi_icarus /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_004/icarus/xor2.vvp -fst
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+INFO     cocotb:simulator.py:305      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.1 from /usr/local/lib/python3.10/dist-packages/cocotb
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb                             Seeding Python random module with 1727801799
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  Found test test_xor2.two_input_test_004
+INFO     cocotb:simulator.py:305      0.00ns INFO     cocotb.regression                  running two_input_test_004 (1/1)
+INFO     cocotb:simulator.py:305                                                           Automatically generated test
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305                                                           a: 1
+INFO     cocotb:simulator.py:305                                                           b: 1
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  two_input_test_004 passed
+INFO     cocotb:simulator.py:305      1.00ns INFO     cocotb.regression                  **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** test_xor2.two_input_test_004   PASS           1.00           0.00        790.98  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  1.00           0.12          8.66  **
+INFO     cocotb:simulator.py:305                                                         **************************************************************************************
+INFO     cocotb:simulator.py:305 
+INFO     cocotb:simulator.py:305 FST info: dumpfile xor2.fst opened for output.
+INFO     cocotb:simulator.py:262 Results file: /workspaces/lab-1-structural-verilog-isabellaPhung/part2/xor2/run/two_input_test_004/icarus/y2fr0al5_results.xml
+=========================== short test summary info ============================
+PASSED test_xor2.py::test_each_runner[test_name=init_test]
+PASSED test_xor2.py::test_each_runner[test_name=two_input_test_001]
+PASSED test_xor2.py::test_each_runner[test_name=two_input_test_004]
+SKIPPED [1] test_xor2.py:109: Requires Verilator
+SKIPPED [1] test_xor2.py:116: Requires Verilator
+FAILED test_xor2.py::test_each_runner[test_name=two_input_test_002] - SystemE...
+FAILED test_xor2.py::test_each_runner[test_name=two_input_test_003] - SystemE...
+FAILED test_xor2.py::test_all_runner - SystemExit: FAILED 2 tests.
+==================== 3 failed, 3 passed, 2 skipped in 1.86s ====================

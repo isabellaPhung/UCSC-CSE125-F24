@@ -1,0 +1,14 @@
+[options]
+mode bmc
+depth 10
+expect pass
+
+[engines]
+smtbmc yices
+
+[script]
+read_verilog -formal xor2.sv
+prep -top xor2
+
+[files]
+xor2.sv

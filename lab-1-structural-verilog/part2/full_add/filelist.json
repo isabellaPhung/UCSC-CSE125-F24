@@ -1,0 +1,11 @@
+{
+    "top": "full_add",
+    "files":
+    ["part2/full_add/full_add.sv",
+     "part2/half_add/half_add.sv",
+     "part2/xor2/xor2.sv",
+     "provided/and2.sv",
+     "provided/or2.sv",
+     "provided/inv.sv"
+    ]
+}

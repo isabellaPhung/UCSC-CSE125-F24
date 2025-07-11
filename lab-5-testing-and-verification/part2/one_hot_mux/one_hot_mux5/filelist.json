@@ -1,0 +1,7 @@
+{
+    "top": "testbench",
+    "files":
+    ["part2/one_hot_mux/one_hot_mux5/one_hot_mux.sv"
+    ,"part2/one_hot_mux/testbench.sv"
+    ]
+}

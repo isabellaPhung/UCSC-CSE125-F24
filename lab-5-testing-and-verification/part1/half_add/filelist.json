@@ -1,0 +1,7 @@
+{
+    "top": "testbench",
+    "files":
+    ["part1/half_add/half_add.sv"
+    ,"part1/half_add/testbench.sv"
+    ]
+}

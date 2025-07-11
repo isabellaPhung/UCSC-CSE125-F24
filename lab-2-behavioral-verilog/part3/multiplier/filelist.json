@@ -1,0 +1,6 @@
+ {
+    "top": "multiplier",
+    "files":
+     ["part3/multiplier/multiplier.sv"
+    ]
+}

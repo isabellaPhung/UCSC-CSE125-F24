@@ -1,0 +1,35 @@
+# Icebreaker Physical Constraints File (.pcf)
+# 
+# This file assigns inputs/outputs to physical pins numbers on the icebreaker board.
+#
+# This particular PCF is derived from:
+# https://github.com/YosysHQ/icestorm/blob/master/examples/icebreaker/icebreaker.pcf
+# and adapted to use naming mechanisms consistent with the BSG style
+# guide
+
+## Board Clock: 12 MHz
+set_frequency  clk_12mhz_i             12
+set_io -nowarn clk_12mhz_i             35
+
+## Buttons
+set_io -nowarn reset_n_async_unsafe_i  10
+
+# PMOD 1A
+set_io -nowarn ssd_o[0]                 4
+set_io -nowarn ssd_o[1]                 2
+set_io -nowarn ssd_o[2]                47
+set_io -nowarn ssd_o[3]                45
+set_io -nowarn ssd_o[4]                 3
+set_io -nowarn ssd_o[5]                48
+set_io -nowarn ssd_o[6]                46
+set_io -nowarn ssd_o[7]                44
+
+# PMOD 1B
+set_io -nowarn kpyd_col_o[0]               19
+set_io -nowarn kpyd_col_o[1]               21
+set_io -nowarn kpyd_col_o[2]               25
+set_io -nowarn kpyd_col_o[3]               27
+set_io -nowarn kpyd_row_i[0]               18
+set_io -nowarn kpyd_row_i[1]               20
+set_io -nowarn kpyd_row_i[2]               23
+set_io -nowarn kpyd_row_i[3]               26
